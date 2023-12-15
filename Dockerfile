@@ -20,7 +20,8 @@ RUN echo 'detect arch ...' \
     && if [[ `uname -p` =~ "x86_64" ]]; then ARCH='amd64'; SC_ARCH='linux64'; fi \
     && if [[ `uname -p` =~ "armv7" ]]; then \
     ARCH='armv7'; SC_ARCH='armv7'; \
-    for i in /etc/ssl/certs/*.pem; do HASH=$(openssl x509 -hash -noout -in $i); ln -s $(basename $i) /etc/ssl/certs/$HASH.0; done \
+    # for i in /etc/ssl/certs/*.pem; do HASH=$(openssl x509 -hash -noout -in $i); ln -s $(basename $i) /etc/ssl/certs/$HASH.0; done \
+    # apt-get install -y --no-install-recommends apt-utils; \
     fi \
     && if [[ `uname -p` =~ "aarch64" ]]; then ARCH='arm64';SC_ARCH='aarch64'; fi \
     && echo 'install clash ...' \
