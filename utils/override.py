@@ -16,7 +16,7 @@ ipv6: %s
 dns:
   enable: true
   listen: 0.0.0.0:1053
-  enhanced-mode: redir-host
+  enhanced-mode: fake-ip
   default-nameserver:
     - 180.76.76.76
     - 223.5.5.5
